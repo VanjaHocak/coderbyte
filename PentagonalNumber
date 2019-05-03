@@ -1,0 +1,29 @@
+function PentagonalNumber(num) { 
+    // number of threads
+    var numOfCir = num;
+    // number of total small circles
+    var circle = 0;
+    
+    //if number of threads is 1 number of circles is 1
+    if(numOfCir == 1){
+        return 1;
+    }
+    
+    //math formula: x = y + (3* (y - 1)) + y - 2
+    // x => number of total small circles
+    // y => number of threads
+    while(numOfCir > 1){
+        circle += numOfCir+(3*(numOfCir-1))+numOfCir-2;
+        numOfCir -=1;
+        if(numOfCir == 1){
+            circle+=1;
+        }
+        
+    }
+    
+    return circle
+};
+
+   
+// keep this function call here 
+PentagonalNumber(readline());
